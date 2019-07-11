@@ -1,0 +1,29 @@
+
+1、在需要上传的文件夹上右键打开Git Bash Here，进入界面
+
+2、在打开的GIt Bash中输入以下命令（用户和邮箱为你github注册的账号和邮箱）
+   $ git config --global user.name "gyhuqiong"
+   $ git config --global user.email "1140995244@qq.com"
+
+3、设置SSH key
+   生成ssh key(先检查是否已经生成秘钥输入：cd ~/.ssh，如果返回的ls有3个文件,则密钥已经生成；如果没有秘钥，则输入$ ssh-keygen -t rsa -C "1140995244@qq.com"生成，生成过程中按三次回车即可，生成成功后去对应目录用记事本打开id_rsa.pub，得到ssh key公钥)
+
+4、为github账号配置ssh key(切换到github，展开个人头像的小三角，点击settings，然后打开SSH keys菜单， 点击Add SSH key新增密钥，填上标题，标题最好跟本地仓库保持一致，接着将id_rsa.pub文件中key粘贴到key的文本框里，最后Add key生成密钥吧。)
+
+5、回到git的界面，执行指令：git int初始化，初始化成功后你会发现项目里多了一个隐藏文件夹.git
+
+6、执行指令：git add .，将所有文件添加到仓库（注意.前面的空格）
+
+7、执行指令：git commit -m “提交文件的备注说明”。（双引号内是提交注释。）
+
+8、关联github仓库
+   到github的仓库地址里复制仓库地址（code标签下的SSH）；
+   执行指令：git remote add origin https://github.com/hanyuntao/text.git （这个https即为上面复制的仓库地址）
+
+9、上传本地代码：git push -u origin master
+
+10、完成，可以看到我们的本地项目已经上传到github上了
+
+如果看不明白，可以参考以下链接（步骤差不多是按照第一个链接来的，第二个链接里有总结说明）
+https://www.cnblogs.com/zqyanywn/p/8418729.html  
+https://www.2cto.com/kf/201808/771187.html
